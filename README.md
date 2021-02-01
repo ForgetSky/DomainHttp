@@ -38,10 +38,11 @@
 怎么区分不同域名，从而执行不同的策略呢？有两种方式： 
 1. 在接口上添加一个请求头, 这个请求头只会用在本地处理逻辑中，实际网络数据中不会携带发出去，例如在第二套域名策略的所有接口中都加上(damian :test2)
 2. 在request中添加一个Tag, 例如：addTag(DomainTag(test2）)
-- 怎么实现数据加解密和握手流程？
-  都在BaseEncryptPolicy封装好了，只需要继承它，实现抽象方法就行了
-- 怎么使用DNS优化功能？
-CacheDns()
-- 日志打印？ loggingInterceptor()
 
-细节先看源码和例子吧，有时间再细说
+两种方式，选择一个自己方便的使用就行；
+- 怎么实现数据加解密和握手流程？
+  都在BaseEncryptPolicy封装好了，只需要继承它，实现抽象方法就行了；
+  不需要加密的环境，比较简单，实现IDomainPolicy就行
+- 怎么使用DNS优化功能？
+CacheDns()和 DnsRetryInterceptor()
+- 日志打印？ loggingInterceptor()
