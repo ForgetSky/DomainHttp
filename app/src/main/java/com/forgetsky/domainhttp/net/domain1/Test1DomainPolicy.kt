@@ -136,7 +136,7 @@ class Test1DomainPolicy : BaseEncryptPolicy() {
         return (!handShakeSuccess || EncryptUtil.isEncryptInvalid())
     }
 
-    override fun decryptBodyForLog(byteArray: ByteArray?): String? {
+    override fun decryptBodyForLog(byteArray: ByteArray?): String {
         if (isEncryptInvalid()) return ""
         return EncryptUtil.decryptResultForLog(byteArray)
     }
