@@ -1,4 +1,4 @@
-package com.forgetsky.domainhttp.net.response
+package com.forgetsky.domainhttptest.net.response
 
 import android.accounts.NetworkErrorException
 import android.content.Context
@@ -7,9 +7,9 @@ import android.util.Log
 import androidx.annotation.CallSuper
 import com.blankj.utilcode.util.GsonUtils
 import com.forgetsky.domainhttp.domain.AesException
-import com.forgetsky.domainhttp.net.APIException
-import com.forgetsky.domainhttp.net.NETERROR
-import com.forgetsky.domainhttp.net.UNKONWERROR
+import com.forgetsky.domainhttptest.net.APIException
+import com.forgetsky.domainhttptest.net.NETERROR
+import com.forgetsky.domainhttptest.net.UNKONWERROR
 import io.reactivex.subscribers.DisposableSubscriber
 import retrofit2.HttpException
 import java.net.ConnectException

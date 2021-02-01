@@ -1,4 +1,4 @@
-package com.forgetsky.domainhttp.net;
+package com.forgetsky.domainhttptest.net;
 
 
 import com.blankj.utilcode.util.GsonUtils;

@@ -1,4 +1,4 @@
-package com.forgetsky.domainhttp.net.domain1
+package com.forgetsky.domainhttptest.net.domain1
 
 const val SUCCESS = "00"
 

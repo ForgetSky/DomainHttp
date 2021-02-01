@@ -1,20 +1,21 @@
-package com.forgetsky.domainhttp.net
+package com.forgetsky.domainhttptest.net
 
 import android.util.Log
-import com.forgetsky.domainhttp.BuildConfig
-import com.forgetsky.domainhttp.dns.DnsRetryInterceptor
 import com.forgetsky.domainhttp.dns.CacheDns
-import com.forgetsky.domainhttp.domain.DomainPolicyInterceptor
+import com.forgetsky.domainhttp.dns.DnsRetryInterceptor
 import com.forgetsky.domainhttp.domain.Domain
 import com.forgetsky.domainhttp.domain.DomainManager
+import com.forgetsky.domainhttp.domain.DomainPolicyInterceptor
 import com.forgetsky.domainhttp.domain.IDomainPolicy
 import com.forgetsky.domainhttp.logger.HttpEventListener
 import com.forgetsky.domainhttp.logger.L
 import com.forgetsky.domainhttp.logger.LoggingInterceptor
-import com.forgetsky.domainhttp.net.domain1.Test1DomainPolicy
-import com.forgetsky.domainhttp.net.domain2.Test2DomainPolicy
 import com.forgetsky.domainhttp.utils.isEncryptInterface
 import com.forgetsky.domainhttp.utils.isHandShakeInterface
+import com.forgetsky.domainhttptest.BuildConfig
+import com.forgetsky.domainhttptest.net.domain1.Test1DomainPolicy
+import com.forgetsky.domainhttptest.net.domain2.Test2DomainPolicy
+
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

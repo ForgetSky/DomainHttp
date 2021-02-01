@@ -1,10 +1,10 @@
-package com.forgetsky.domainhttp.net.domain1
+package com.forgetsky.domainhttptest.net.domain1
 
 import android.content.Context
-import com.forgetsky.domainhttp.net.APIException
-import com.forgetsky.domainhttp.net.response.BaseSubscriber
-import com.forgetsky.domainhttp.net.response.EMPTY_DATA
-import com.forgetsky.domainhttp.net.response.FAILED
+import com.forgetsky.domainhttptest.net.APIException
+import com.forgetsky.domainhttptest.net.response.BaseSubscriber
+import com.forgetsky.domainhttptest.net.response.EMPTY_DATA
+import com.forgetsky.domainhttptest.net.response.FAILED
 
 
 abstract class Domain1Subscriber<T>(context: Context?) : BaseSubscriber<Domain1Response<T>>(context) {

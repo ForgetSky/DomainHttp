@@ -1,4 +1,4 @@
-package com.forgetsky.domainhttp
+package com.forgetsky.domainhttptest
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

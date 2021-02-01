@@ -1,7 +1,5 @@
-package com.forgetsky.domainhttp.net.domain1
+package com.forgetsky.domainhttptest.net.domain1
 
-import com.forgetsky.domainhttp.requesttag.EncryptTag
-import com.forgetsky.domainhttp.requesttag.HandShakeTag
 import com.forgetsky.domainhttp.utils.HEADER_HANDSHAKE
 import okhttp3.RequestBody
 import okhttp3.ResponseBody

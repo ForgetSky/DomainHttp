@@ -1,10 +1,10 @@
-package com.forgetsky.domainhttp.net.domain1
+package com.forgetsky.domainhttptest.net.domain1
 
 import android.util.Log
 import com.forgetsky.domainhttp.domain.AesException
 import com.forgetsky.domainhttp.domain.DECRYPT_ERROR
 import com.forgetsky.domainhttp.domain.ENCRYPT_ERROR
-import com.forgetsky.domainhttp.net.HttpUtil
+import com.forgetsky.domainhttptest.net.HttpUtil
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody

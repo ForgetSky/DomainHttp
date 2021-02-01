@@ -1,19 +1,17 @@
-package com.forgetsky.domainhttp.net.domain1
+package com.forgetsky.domainhttptest.net.domain2
 
 import android.text.TextUtils
 import com.forgetsky.domainhttp.domain.AesException
 import com.forgetsky.domainhttp.domain.BaseEncryptPolicy
 import com.forgetsky.domainhttp.domain.Domain
-import com.forgetsky.domainhttp.net.HttpUtil
-import com.forgetsky.domainhttp.net.HttpUtil.TYPE_JSON
-import com.forgetsky.domainhttp.net.RETURN_STATUS_SESSION_TIMEOUT
-import com.forgetsky.domainhttp.net.RETURN_STATUS_SHAKEHANDS_FAILED
-import com.forgetsky.domainhttp.net.RetrofitManager
+import com.forgetsky.domainhttptest.net.HttpUtil
+import com.forgetsky.domainhttptest.net.RETURN_STATUS_SESSION_TIMEOUT
+import com.forgetsky.domainhttptest.net.RETURN_STATUS_SHAKEHANDS_FAILED
+import com.forgetsky.domainhttptest.net.RetrofitManager
 import okhttp3.Request
 
 import okhttp3.Response
 import okhttp3.ResponseBody
-import okhttp3.internal.closeQuietly
 import okio.Buffer
 import org.json.JSONObject
 import retrofit2.Call
@@ -22,7 +20,7 @@ import java.nio.charset.StandardCharsets
 /**
  * Created by ForgetSky on 20-10-30.
  */
-class Test1DomainPolicy : BaseEncryptPolicy() {
+class Test2DomainPolicy : BaseEncryptPolicy() {
     @Volatile
     private var mToken: String? = null
 

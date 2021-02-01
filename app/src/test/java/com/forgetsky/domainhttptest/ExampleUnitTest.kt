@@ -1,4 +1,4 @@
-package com.forgetsky.domainhttp
+package com.forgetsky.domainhttptest
 
 import org.junit.Test
 

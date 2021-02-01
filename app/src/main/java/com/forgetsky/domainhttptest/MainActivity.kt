@@ -1,4 +1,4 @@
-package com.forgetsky.domainhttp
+package com.forgetsky.domainhttptest
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

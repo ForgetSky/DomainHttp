@@ -1,9 +1,7 @@
-package com.forgetsky.domainhttp.net.domain2
+package com.forgetsky.domainhttptest.net.domain2
 
-import com.forgetsky.domainhttp.requesttag.DomainTag
-import com.forgetsky.domainhttp.net.DOMAIN_DEFAULT
-import com.forgetsky.domainhttp.net.DOMAIN_TEST2
 import com.forgetsky.domainhttp.utils.HEADER_HANDSHAKE
+import com.forgetsky.domainhttptest.net.DOMAIN_TEST2
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call

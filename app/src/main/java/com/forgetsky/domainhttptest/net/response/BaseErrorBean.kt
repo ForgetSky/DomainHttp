@@ -1,4 +1,4 @@
-package com.forgetsky.domainhttp.net.response
+package com.forgetsky.domainhttptest.net.response
 
 class BaseErrorBean {
     /**
