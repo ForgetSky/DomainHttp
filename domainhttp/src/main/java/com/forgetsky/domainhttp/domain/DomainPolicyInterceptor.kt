@@ -30,25 +30,28 @@ class DomainPolicyInterceptor : Interceptor {
             val domainKeyFromHeader = request.header(KEY_DOMAIN)
             domainKeyFromHeader?.let {
                 domainKey = domainKeyFromHeader
-                //后面的流程中统一使用tag来判断
-                requestBuilder.tag(DomainTag::class.java, DomainTag(domainKey))
                 requestBuilder.removeHeader(KEY_DOMAIN)
             }
+            //后面的流程中统一使用tag来判断
+            requestBuilder.tag(DomainTag::class.java, DomainTag(domainKey))
         } else {
             domainKey = domainTag.domain
         }
         val domain = DomainManager.mDomainMap[domainKey]
                 ?: throw IllegalArgumentException("No domain for $domainKey")
 
-        //针对单个接口处理是否加密，可以通过tag或者header配置
+        //接口是否加密，可以通过tag或者header配置
+        var isEncrypt = domain.isEncrypt
         val encryptTag = request.tag(EncryptTag::class.java)
         if (encryptTag == null) {
             val isEncryptHeader = request.header(KEY_ENCRYPT_HEADER)
             isEncryptHeader?.let {
-                //后面的流程中统一使用tag来判断
-                requestBuilder.tag(EncryptTag::class.java, EncryptTag(isEncryptHeader == "true"))
+                isEncrypt = isEncryptHeader == "true"
                 requestBuilder.removeHeader(KEY_ENCRYPT_HEADER)
             }
+
+            //后面的流程中统一使用tag来判断
+            requestBuilder.tag(EncryptTag::class.java, EncryptTag(isEncrypt))
         }
 
         //处理接口是否是握手接口，可以通过tag或者header配置

@@ -1,6 +1,7 @@
 package com.forgetsky.domainhttptest.net
 
 import android.util.Log
+import com.forgetsky.domainhttp.BuildConfig
 import com.forgetsky.domainhttp.dns.CacheDns
 import com.forgetsky.domainhttp.dns.DnsRetryInterceptor
 import com.forgetsky.domainhttp.domain.Domain
@@ -104,8 +105,8 @@ object RetrofitManager {
             }
         }, object : LoggingInterceptor.DecryptAdapter {
             override fun decrypt(chain: Interceptor.Chain, inputStream: InputStream): String {
-                if (isEncryptInterface(chain.request()) &&
-                        !isHandShakeInterface(chain.request())) {
+                if (chain.request().isEncryptInterface() &&
+                        !chain.request().isHandShakeInterface()) {
                     return try {
                         val domainPolicy: IDomainPolicy? =
                             DomainManager.getDomainPolicy(chain.request())

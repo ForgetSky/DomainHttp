@@ -71,22 +71,12 @@ fun Request.isPost() : Boolean {
     return "POST" == this.method
 }
 
-fun isEncryptInterface(request: Request) : Boolean {
-    val domainTag = request.tag(DomainTag::class.java)
-    val domainKey = domainTag?.domain
-    return isEncryptInterface(
-        request,
-        DomainManager.mDomainMap[domainKey]
-    )
+fun Request.isEncryptInterface() : Boolean {
+    val tag = tag(EncryptTag::class.java)
+    return tag?.isEncrypt ?: false
 }
 
-fun isEncryptInterface(request: Request, domain: Domain?) : Boolean {
-    val tag = request.tag(EncryptTag::class.java)
-    if (tag != null) return tag.isEncrypt
-    return domain?.isEncrypt ?: false
-}
-
-fun isHandShakeInterface(request: Request) : Boolean {
-    val tag = request.tag(HandShakeTag::class.java)
+fun Request.isHandShakeInterface() : Boolean {
+    val tag = tag(HandShakeTag::class.java)
     return tag?.isHandShake ?: false
 }

@@ -68,8 +68,7 @@ internal object EncryptUtil {
      */
     fun decryptResultForLog(result: ByteArray?): String {
         try {
-            decryptResult(result)
-            return String()
+            return decryptResult(result)
         } catch (e: Exception) {
             Log.e("decryptResultForLog", "e:" + e.message)
         }

@@ -32,7 +32,7 @@ abstract class BaseEncryptPolicy :
             processResponse(domain, response)
         } catch (e: AesException) {
             //如果是握手接口，则抛出异常给握手方法tryHandShake()去处理
-            if (isHandShakeInterface(request)) throw e
+            if (request.isHandShakeInterface()) throw e
             //请求时间早于握手成功时间，则不用重新握手，直接重新发起请求
             if (requestTime > handShakeSuccessTime) {
                 handShakeSuccess = false
@@ -50,8 +50,8 @@ abstract class BaseEncryptPolicy :
         return builder.also {
             addHeaders(domain, request, it)
             //如果是加密环境，且是POST接口，则执行加密或握手相关的逻辑
-            if (isEncryptInterface(request, domain) && request.isPost()) {
-                if (isHandShakeInterface(request)) {
+            if (request.isEncryptInterface() && request.isPost()) {
+                if (request.isHandShakeInterface()) {
                     processHandShakeRequest(domain, it.build(), it)
                 } else {
                     //如果不是握手接口，则添加公共请求参数，对请求体加密
@@ -65,11 +65,11 @@ abstract class BaseEncryptPolicy :
     @Throws(IOException::class)
     override fun processResponse(domain: Domain, response: Response): Response {
         //如果是加密环境，且是POST接口，则执行解密密或握手相关的逻辑
-        if (isEncryptInterface(response.request, domain) && response.request.isPost()) {
+        if (response.request.isEncryptInterface() && response.request.isPost()) {
             val code = response.code
             if (response.isSuccessful) {
                 //如果是握手接口
-                return if (isHandShakeInterface(response.request)){
+                return if (response.request.isHandShakeInterface()){
                     processHandShakeResponse(domain, response)
                 } else {
                     //如果不是握手接口，则对响应体解密

@@ -1,0 +1,30 @@
+//================================bintray 上传插件配置 start=========================================
+apply plugin: 'com.github.panpf.bintray-publish'
+
+//防止中文注释出现错误
+allprojects {
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //上传插件
+        classpath 'com.github.panpf.bintray-publish:bintray-publish:1.0.0'
+    }
+}
+
+publish {
+    userOrg = 'forgetsky'      //bintray注册的用户名
+    groupId = 'com.forgetsky'         //compile引用时的第1部分groupId
+    artifactId = 'domainhttp'     //compile引用时的第2部分项目名
+    publishVersion = '1.0.0'    //compile引用时的第3部分版本号
+    desc = '一个基于OkHttp的多域名加密网络请求库'
+    website = 'https://github.com/ForgetSky/DomainHttp'   // 项目的主页
+}
+//================================bintray 上传插件配置 end=========================================
